@@ -13,7 +13,6 @@ import (
 	"strings"
 
 	"getThumb/api/proto"
-	_ "github.com/mattn/go-sqlite3"
 )
 
 type Server struct {
