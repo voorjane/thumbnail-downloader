@@ -23,6 +23,8 @@
 
    `go run cmd/client/main.go <async> <ссылки>` или `make run_client <ссылки>` (флаг async не работает с make)
 
+5. Превью сохраняются в папке downloads в корне репозитория
+
 - Замечание
 
   Не обрабатываются видео без превью (пример: https://www.youtube.com/watch?v=jNQXAC9IVRw)
