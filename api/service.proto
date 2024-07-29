@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "./proto";
+
+package thumbnail;
+
+service Thumbnail {
+  rpc GetThumbnail (Request) returns (Response);
+}
+
+message Request {
+  string url = 1;
+}
+
+message Response {
+  bytes image = 1;
+}
