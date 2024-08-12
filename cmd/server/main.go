@@ -26,13 +26,12 @@ func main() {
 	}
 
 	db, err := pg.ConnectToDB()
-
-	dbInstance, _ := db.DB()
-	defer dbInstance.Close()
-
 	if err != nil {
 		logrus.Errorf("error connecting to database: %v", err)
 	}
+
+	dbInstance, _ := db.DB()
+	defer dbInstance.Close()
 
 	s := grpc.NewServer()
 	proto.RegisterThumbnailServer(s, internal.NewServer(db))
