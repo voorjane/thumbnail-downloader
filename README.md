@@ -1,4 +1,4 @@
-# Тестовое задание для компании "Эшелон Технологии"
+# Сервис для сохранения превью видео с YouTube
 
 ## Запуск
 
@@ -32,43 +32,3 @@
 ## Тесты
 
 `make test`
-
-## CICD
-
-Я работал только с GitLab CI/CD, вот как мог бы выглядеть пайплайн:
-
-`.gitlab-ci.yml`
-```
-stages:
-    - build
-    - style
-    - test
-    - deploy
-
-build_project:
-  stage: build
-  tags:
-    - build
-  script:
-    - make ci_build
-  artifacts:
-    paths:
-      - ./.bin/server
-      - ./.bin/client
-    expire_in: 30 days
-
-tests:
-  stage: test
-  tags:
-    - test
-  script:
-    - make test
-
-deploy:
-  stage: deploy
-  tags:
-    - deploy
-  when: manual
-  script:
-    # скрипт для деплоя
-```
